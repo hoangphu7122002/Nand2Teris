@@ -1,0 +1,7 @@
+*PPL training:
+
+Language Characteristics:
++ Simplicity
++ Orthogonality
++ Support of abstraction (control,data)
++ Safety

@@ -1,0 +1,35 @@
+mạng tĩnh và bao gồm các địa điểm và quá trình chuyển đổi 
+
+tròn: places hold token
+transition: produce and/or consume tokens
+mũi tên: arc
+dấu chấm: token
+
+markings: trạng thái đánh dấu 
+reachable marking and unreachable marking
+initial markings: ban đầu có bao nhiêu thẻ thì kết thúc bấy nhiêu (nhận định sai)
+final markings: có nhiều trạng thái có thể đặt được
+
+enable and firing: transition is enbled if each input place contains a token
+an enable transition can fire by consuming a token from each input place and producing a token for each output
+(suy ra số lượng thẻ có thể thay đổi + số lượng token sản xuất cho mỗi place output như nhau)
+
+Trường hợp: place is both input and output => don't change
+Trường hợp: multiple transitions: bắn ko ảnh hưởng lẫn nhau -> state explosion
+Trường hợp: conflict: một input là của 2 transition
+
+có thể tách 1 mô hình ra thành nhiều mô hình tùy quan điểm -> xảy ra nhiều reachable marking (alternate + simulate)'
+
+symbol:
+initial marking -> ex: [r1,r2,x]
+set of reachable marking -> ex: {[..],[..]}
+reachability graph -> is a transition system with one initial state and no explicit final marking
+
+Tìm hiểu ngôn ngữ prolog:
++ Một chương trình Prolog là một cơ sở dữ liệu gồm các mệnh đề (clause). Mỗi mệnh đề được xây dựng từ các vị từ (predicat). Một vị từ là một phát biểu nào đó về các đối tượng có giá trị chân đúng (true) hoặc sai (fail).
++ Mỗi nguyên tử (nói gọn) biểu diễn một quan hệ giữa các hạng (term) => hạng và quan hệ tạo thành mệnh đề
++ Hạng được xem là những đối tượng “dữ liệu” trong một trình Prolog. Hạng có thể là hạng sơ cấp (elementary term) gồm hằng (constant), biến (variable) và các hạng phức hợp (compound term).
++ Hạng phức hợp là một hàm tử (functor) có chứa các đối (argument), có dạng:
++ Sự kiện : < … >. (tương ứng với luật < … > :- true. ) woman(mary). man(jim).
++ Luật : < … > :- < … >. Ex: child(Y, X) :- parent(X, Y).
++ Câu hỏi ?- < … >. (ở chế độ tương tác có dấu nhắc lệnh)
